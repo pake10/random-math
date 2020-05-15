@@ -1,0 +1,84 @@
+\documentclass[12pt,finnish]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[rightcaption]{sidecap}
+\usepackage{wrapfig}
+\usepackage{babel}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\setlist[enumerate,1]{leftmargin=*}
+
+\begin{document}
+ \section*{Numeerisia ja algebrallisia menetelmiä}
+ 
+\vspace{5mm}
+ 
+\begin{questions}
+
+\bfseries
+\question
+\mdseries
+Määrää polynomin \(x^3-x^2+2x-2\) kaikkien nollakohtien tarkat arvot.
+
+\vspace{1ex}
+
+\bfseries
+\question
+\mdseries
+Tarkastellaan yhtälöä \(\ln x-x=-2\).
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Osoita, että yhtälöllä on tasan yksi juuri välillä \([2,4]\).
+\item Määritä tämä juuri kolmen desimaalin tarkkuudella käyttäen kiintopistemenetelmää.
+\end{enumerate}
+
+\bfseries
+\question
+\mdseries
+Italialainen Fibonacci laski vuonna 1225 yhtälön \(x^3+2x^2+10x-20=0\) juurelle likiarvon \(x\approx 1,\! 368808108\). \emph{(yo 15k)}
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Osoita, että yhtälöllä on täsmälleen yksi juuri reaalilukujen joukossa.
+\item {Kuinka mones Newtonin menetelmän iterointikierros tuottaa ensimmäisen kerran samat yhdeksän desimaalia kuin Fibonaccin likiarvossa, kun alkuarvona on \(x_0=1\)?}
+\end{enumerate}
+
+\vspace{1ex}
+
+\bfseries
+\question
+\mdseries
+Veden virtausnopeutta putkessa mitattiin tunnin välein. Mittaustulokset on esitetty oheisessa taulukossa.
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Arvioi puolisuunnikassäännön avulla, kuinka monta litraa vettä virtasi mittauspisteen ohi mittauksen aikana.
+
+\item Oletetaan, että virtausnopeuden kuvaaja on polynomi. Arvioi a-kohdan tuloksen tarkkuutta kuvion avulla.
+
+\end{enumerate}
+
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c|c| } 
+ \hline
+ \(t\) (h) & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\ 
+ \hline
+ \(Q\) (l/h) & 0,\! 50 & 1,\! 00 & 0,\! 60 & 0,\! 50 & 0,\! 40 & 0,\! 80 & 1,\! 00 \\ 
+ \hline
+\end{tabular}
+\end{center}
+
+\bfseries
+\question
+\mdseries
+Kappale liikkuu \((t,x)\)-koordinaatistossa pitkin käyrää \(\sin (2t)\) välillä \([0,1]\). Aika on ilmoitettu sekunteina ja paikka metreinä.
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Arvioi kappaleen kulkemaa matkaa Simpsonin säännöllä, kun osavälejä on \(n=2\).
+\item Miten arvion tarkkuus muuttuu, kun \(n \to \infty\)? Piirrä kuvio.
+\end{enumerate}
+
+\end{questions}
+\thispagestyle{empty}
+
+
+\end{document}
+

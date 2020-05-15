@@ -1,0 +1,177 @@
+\documentclass{article}
+\newcommand\varpm{\mathbin{\vcenter{\hbox{%
+  \oalign{\hfil$\scriptstyle+$\hfil\cr
+          \noalign{\kern-.3ex}
+          $\scriptscriptstyle({-})$\cr}%
+}}}}
+\newcommand\varmp{\mathbin{\vcenter{\hbox{%
+  \oalign{$\scriptstyle({+})$\cr
+          \noalign{\kern-.3ex}
+          \hfil$\scriptscriptstyle-$\hfil\cr}%
+}}}}
+\usepackage[utf8]{inputenc}
+\date{}
+
+\title{\textbf{Schrödingerin yhtälö}}
+
+\author{Jimi Käyrä 16E}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{icomma}
+\usepackage{mhchem}
+\usepackage{pgfplots}
+\usepackage{url}
+\usepackage{array}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{arydshln}
+\usepackage{relsize}
+\usepackage[version=4]{mhchem}
+\pgfplotsset{compat=1.8}
+\usepackage{mathtools}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{matrix}
+\renewcommand{\contentsname}{Sisällys}
+\begin{document}
+\begin{titlepage}
+\maketitle
+\tableofcontents
+\end{titlepage}
+
+\section{Taustaa}
+Kvanttiteoria sai alkunsa vuonna 1900, kun Max Planck oletti sähkömagneettisen säteilyn syntyvän kvantteina, joiden energia on \(E=hf\) ja selvitti vakion \(h\) kokeellisesti. Edelleen vuonna 1905 Albert Einstein onnistui selittämään valosähköisen ilmiön: valo absorboituu kvantteina, ja vain tietyn suuruinen kvantti kykenee irrottamaan metallista elektroneja. Vähitellen alettiin puhua aalto-hiukkasdualismista: valolla on sekä aalto- että hiukkasluonne.\\
+ \\
+Myöhemmin Louis de Broglie esitti, että aalto-hiukkasdualismi koskee myös ainehiukkasia.
+Vuonna 1924 hän esitti väitöskirjassaan, että myös ainehiukkasilla on aallonpituus \(\lambda =h/p\). De Broglie sai työstään Nobelin palkinnon, mutta aluksi ajatus ainehiukkasten aalto-ominaisuuksista herätti vastustusta.\\
+ \\
+Koska oli osoitettu, että myös hiukkasilla on aaltoluonne, alettiin tutkia aaltofunktioita hiukkasten yhteydessä. Erwin Schrödinger kehitti vuonna 1926 yhtälön, jonka ratkaisuna saatiin aallon käyttäytymistä kuvaava aaltofunktio. Schrödingerin yhtälö liittää aaltoyhtälön hiukkaseen, jolla on tietty energia ja potentiaali. Merkitykseltään yhtälö vastaa klassisen fysiikan Newtonin II lakia \(\overline{F}=\text{d}\overline{p}/\text{d}t\). Newtonin II lain avulla voidaan selvittää liikemäärä ja paikka; Schrödingerin yhtälön ratkaisuna saadaan aaltofunktio, jonka perusteella voidaan määrittää mm. hiukkasen esiintymistodennäköisyys tietyssä paikassa.\\
+ \\
+Schrödingerille myönnettiin Nobelin palkinto vuonna 1933.
+ \\
+  \\
+\includegraphics[scale=3]{kasvot}\\
+Erwin Schrödinger
+
+\newpage
+\section{Yleinen aaltoyhtälö}
+Johdetaan ennen Schrödingerin yhtälön tarkastelua ensin yleinen aaltoyhtälö yhdessä ulottuvuudessa. Tarkastellaan joukkoa painoja (yhden massa \(m\)), jotka on kytketty toisiinsa massattomilla jousilla, joiden jousivakio on \(k\). Olkoon lisäksi \(u(X, T)\) massan poikkeama tasapainoasemasta kohdassa \(X\) ajanhetkenä \(T\).\\
+ \includegraphics[scale=0.7]{jousi}
+ \\
+ \\
+Nyt Newtonin II lain mukaan kohtaan \(x+h\) vaikuttaa voima \(F_\text{N}=ma(t)\), jossa kiihtyvyys \(a(t)\) on poikkeaman toinen derivaatta ajan suhteen eli \(F_\text{N}=m\dfrac{\partial ^2}{\partial t^2} u(x+h, t)\). Edelleen Hooken lain \(F=kx\) nojalla massaan vaikuttaa skalaarimuodossa voima \(F_\text{H}=F_{x+2h}-F_x =k[u(x+2h, t)-u(x+h, t)]-k[u(x+h, t) - u(x, t)]=k[u(x+2h, t) - 2u(x+h, t) + u(x, t)]\). Koska \(F_\text{H}=F_\text{N}\), voidaan kirjoittaa \(\dfrac{\partial ^2}{\partial t^2}u(x+h, t)=\dfrac{k}{m}(u(x+2h, t)-2u(x+h, t)+u(x, t))\).\\
+ \\
+Koostukoon jono nyt \(N\) painosta, jolloin sen pituus on \(L=Nh\) ja yhteismassa \(M=Nm\) sekä kokonaisjousivakio \(K=\dfrac{k}{N}\). Tällöin saadaan muoto \(\dfrac{\partial ^2}{\partial t^2} u(x+h, t)=\dfrac{KL^2}{M} \dfrac{u(x+2h, t)-2u(x+h, t)+u(x, t)}{h^2}\). Oikea puoli on toisen derivaatan määritelmän mukaan \(\dfrac{KL^2}{M}\dfrac{\partial ^2 u(x, t)}{\partial x^2}\). Kun painojen lukumäärä \(N\) kasvaa rajatta ja välimatka \(h\to 0\), saadaan \(\dfrac{\partial ^2 u(x, t)}{\partial t^2}=\dfrac{KL^2}{M}\dfrac{\partial ^2 u(x, t)}{\partial x^2}\).\\
+ \\
+Koska \(\dfrac{KL^2}{M}\) on vakio, voidaan merkitä \(\dfrac{KL^2}{M}=\dfrac{1}{v^2}\). Tällöin saadaan yhdessä ulottuvuudessa aaltoyhtälö $$\dfrac{\partial ^2u}{\partial t^2}=\dfrac{1}{v^2} \dfrac{\partial ^2 u}{\partial x^2},$$ jossa \(u\) on aallon muotoa kuvaava \textit{aaltofunktio}. Klassisen fysiikan aalloissa aaltofunktio kuvaa esimerkiksi poikkeamaa tasapainoasemasta; merkitystä hiukkasiin liittyvissä aalloissa tarkastellaan myöhemmin.\\
+ \\
+Kolmessa ulottuuvudessa yhtälö voidaan yleistää muotoon $$\dfrac{1}{v^2}\dfrac{\partial ^2 \phi}{\partial t^2}=\nabla ^2 \phi,$$ jossa Laplacen operaattori $$\nabla ^2=\dfrac{\partial ^2}{\partial x^2}+\dfrac{\partial ^2}{\partial y^2}+\dfrac{\partial ^2}{\partial z^2}.$$
+
+\newpage
+\section{Ajasta riippumaton yhtälö}
+\begin{center}
+    \textit{"Where did we get that [Schrödinger's equation] from? It's not possible to derive it from anything you know. It came out of the mind of Schrödinger."} (Richard Feynman)
+\end{center}
+Schrödingerin yhtälö on postulaatti, mistä seuraa se, että sitä ei voida johtaa klassisen fysiikan tulosten avulla. Ns. ajasta riippumaton Schrödingerin yhtälö voidaan kuitenkin perustella muiden lauseiden avulla.\\
+ \\
+Tarkastellaan edellä johdettua aaltoyhtälöä ja muodostetaan sitä varten aallon vaihenopeuden lauseke hiukkaselle, jonka nopeus on \(v_\text{h}\), massa \(m\), kokonaisenergia \(E\) ja potentiaalienergia \(U\). Aaltoliikkeen perusyhtälöstä \(v=f\lambda\) saadaan vaihenopeudelle \(v=f\cdot \dfrac{h}{p}=\dfrac{hf}{p}\). Liike-energialle saadaan yleisesti \(E_\text{k}=\dfrac{1}{2}mv^2=\dfrac{1}{2}\cdot \dfrac{(mv)^2}{m}=\dfrac{p^2}{2m}\), josta \(p=\sqrt{2mE_\text{k}}\). Koska toisaalta pätee \(E_\text{k}=E-U\), saadaan liikemäärän lauseke muotoon \(p=\sqrt{2m(E-U)}\) ja siten vaihenopeudelle pätee \(v=\dfrac{hf}{\sqrt{2m(E-U)}}\).\\
+ \\
+Sijoittamalla voidaan osoittaa, että muotoa \(\psi =\psi_0 \sin (2\pi ft)\) oleva aaltofunktio toteuttaa yleisen aaltoyhtälön. Tällöin \(\dfrac{\partial \psi}{\partial t}=2\pi f\psi _0 \cos (2\pi ft)\) ja edelleen \(\dfrac{\partial ^2 \psi}{\partial t^2}=-4\pi ^2 f^2 \psi _0 \sin (2\pi ft)=-4\pi ^2 f^2 \psi\).\\
+ \\
+Sijoittamalla tämä tulos yleiseen aaltoyhtälöön saadaan \(\dfrac{-4\pi ^2 f^2 \psi}{v^2}=\nabla ^2 \psi\). Koska nyt edellä johdetun tuloksen nojalla pätee \(v^2=\dfrac{h^2 f^2}{2m(E-U)}\), saadaan sijoittamalla \(\dfrac{-4\pi ^2 f^2 \psi}{\dfrac{h^2 f^2}{2m(E-U)}}=\nabla ^2 \psi \iff \dfrac{-4\pi^2 f^2 \psi 2m(E-U)}{h^2 f^2}=\nabla ^2 \psi\) eli \(-\left (\dfrac{2\pi}{h}\right )^2\cdot \psi 2m(E-U)=\nabla ^2 \psi\). Merkitään nyt \(\hbar =\dfrac{h}{2\pi}\) (redusoitu Planckin vakio), jolloin yhtälö saadaan vietyä muotoon $$\left [-\dfrac{\hbar ^2}{2m}\nabla ^2+U(\vec{r}) \right ] \Psi (\vec{r})=E \Psi (\vec{r}).$$ Tämä on ns. ajasta riippumaton Schrödingerin yhtälö.
+
+\newpage
+\section{Yleinen yhtälö}
+Yleinen, ajasta riippuva Schrödingerin yhtälö on muotoa $$-\dfrac{\hbar ^2}{2m}\dfrac{\partial ^2 \Psi (x, t)}{\partial x^2}+U(x)\Psi (x, t)=i\hbar \dfrac{\partial \Psi (x, t)}{\partial t},$$ jossa \(\hbar =\dfrac{h}{2\pi}\) (redusoitu Planckin vakio), \(m\) hiukkasen massa, \(\Psi (x, t)\) aaltofunktio, \(U(x)\) hiukkasen potentiaalifunktio ja \(i\) imaginaariyksikkö.\\
+ \\
+Kun \(U(x)=0\), sanotaan, että hiukkanen on vapaa ja yhtälö saadaan muotoon $$-\dfrac{\hbar ^2}{2m} \dfrac{\partial ^2 \psi (x, t)}{\partial x^2}=i\hbar \dfrac{\partial \psi (x, t)}{\partial t}.$$
+ \\
+Voidaan osoittaa, että vapaan hiukkasen aaltoyhtälön toteuttaa aaltofunktio \(\Psi (x, t)=A[\cos (kx-\omega t)+i\sin (kx-\omega t)]=A\text{e}^{i(kx-\omega t)}=A\text{e}^{ikx}\text{e}^{-i\omega t}\). Koska jokaista tällaista aaltofunktiota vastaa energiatila \(E=hf= \dfrac{h}{2\pi}\cdot 2\pi f=\hbar \omega\) ja siten kulmataajuus \(\omega = E/\hbar\), voidaan aaltofunktio kirjoittaa muotoon $$\Psi (x,t)=\psi (x)\text{e}^{-iEt/\hbar}.$$ Tällaisessa stationaarisessa tilassa aaltofunktio koostuu ajasta riippumattomasta funktiosta \(\psi (x)\) ja aikatekijästä \(\text{e}^{-iEt/\hbar}\).\\
+ \\
+Sijoittamalla tämä aaltofunktio ajasta riippuvaan yhtälöön saadaan \(-\dfrac{\hbar ^2}{2m}\dfrac{\partial ^2 (\psi (x)\text{e}^{-iEt/\hbar})}{\partial x^2}+U(x)\psi (x)\text{e}^{-iEt/\hbar}=i\hbar \dfrac{\partial (\psi (x)\text{e}^{-iEt/\hbar})}{\partial t}\) eli \(-\dfrac{\hbar ^2}{2m}\dfrac{\text{d}^2\psi (x)}{\text{d}x^2}\text{e}^{-iEt/\hbar}+U(x)\psi (x)\text{e}^{-iEt/\hbar}=E\psi (x)\text{e}^{-iEt/\hbar}\). Tästä saadaan jakamalla puolittain termillä \(\text{e}^{-iEt/\hbar}\) edellä esitelty ajasta riippumaton Schrödingerin yhtälö $$-\dfrac{\hbar ^2}{2m}\dfrac{\text{d}^2 \psi (x)}{\text{d}x^2}+U(x)\psi (x)=E\psi (x),$$ joka on esitetty nyt yksiulotteisessa muodossa.
+
+\newpage
+\section{Aaltofunktion tulkinta}
+Aaltofunktio \(\psi (x)\) sisältää hiukkasesta kaiken mahdollisen informaation, mutta se ei vastaa suoraan mitään fysikaalista suuretta kuten klassisen fysiikan aalloissa. Todennäköisyystulkinnan mukaan todennäköisyys sille, että hiukkanen on alueessa \(x\in [a, b]\), on $$P=\int_a^b |\psi (x)|^2\text{ d}x.$$\\
+ \\
+Koska hiukkanen on aina jossakin, on sen esiintymistodennäköisyys koko alueen yli 1. Siten aaltofunktiolle saadaan normitusehto $$\int_{-\infty}^{\infty} |\psi (x)|^2\text{ d}x=1.$$
+ \\
+Tarkastellaan esimerkiksi edellä johdettua aaltofunktiota stationaarisille tiloille. Havaitaan, että se sisältää sekä reaaliosan \(\text{Re } \Psi (x, t)=A\cos (kx-\omega t)\) että imaginääriosan \(\text{Im } \Psi (x, t)=A\sin (kx-\omega t)\).\\
+ \\
+ \includegraphics[scale=0.8]{Im}  \includegraphics[scale=0.8]{Re}\\
+  \\
+   \\
+Määritetään \(|\Psi (x, t)|^2\) kertomalla aaltofunktio \(\Psi (x, t)=\psi (x)\text{e}^{-iEt/\hbar}\) kompleksikonjugaatillaan, jolloin saadaan \(|\Psi (x, t)|^2=\Psi ^* (x, t) \Psi (x, t)=\psi ^* (x)\text{e}^{iEt/\hbar}\psi (x)\text{e}^{-iEt/\hbar}=|\psi (x)|^2 \text{e}^0 = |\psi (x)|^2\). Tämä ei riipu ajasta, joten kyseessä todella on stationaarinen tila.
+
+\newpage
+\section{Hiukkanen laatikossa}
+Schrödingerin yhtälön avulla voidaan määrittää systeemien mahdollisia energiatiloja ja niitä vastaavia aaltofunktioita. Tarkastellaan nyt yksinkertaisuuden vuoksi yksiulotteista tapausta, jossa hiukkanen on suljettu välille \(0\leq x\leq L\) rajautuvan laatikon sisään; tällä alueella hiukkasen potentiaaliksi asetetaan 0 ja muualla \(\infty\). Oletetaan lisäksi, että hiukkanen ei menetä energiaa törmätessään seiniin. Hiukkasen potentiaalifunktio on tällöin \(U(x)=\begin{cases} 0, &\text{kun }0\leq x\leq L \\ \infty, &\text{kun }x<0\text{ tai }x>L.\end{cases}\).\\
+\includegraphics[scale=0.75]{laatikko}
+ \\
+Kun \(U(x)=0\), saadaan sijoittamalla yleiseen Schrödingerin yhtälöön \(\dfrac{\partial ^2 \psi (x)}{\partial x^2}+\dfrac{2m}{\hbar}E\psi (x)=0\), josta edelleen voidaan ratkaista aaltofunktio \(\psi (x)\). Sijoittamalla voidaan osoittaa, että muotoa \(\psi (x)=A_1 \text{e}^{ikx}+A_2 \text{e}^{-ikx}\) oleva aaltofunktio toteuttaa yhtälön tietyillä vakioiden arvoilla. Eulerin lauseen avulla funktion lauseke saadaan vietyä muotoon \(\psi (x)=A_1 (\cos kx+i\sin kx)+A_2 (\cos (-kx)+i\sin (-kx))=A_1 (\cos kx+i\sin kx)+A_2 (\cos kx - i \sin kx)=(A_1+A_2)\cos kx + (A_1-A_2) \sin kx\).\\
+ \\
+Reunaehtojen perusteella täytyy olla \(\psi (0)=0\). Nyt \(\psi (0)=(A_1+A_2)\cos 0+(A_1_A_2)\sin 0=A_1+A_2\), joten yhtälö toteutuu, kun \(A_1=-A_2\). Täten on \(\psi (x)=2iA_1 \sin kx=C \sin kx\). Lisäksi on oltava \(\psi (L)=C \sin kL=0\), joka toteutuu, kun \(kL=n\pi\iff k=\dfrac{n\pi}{L}\), \(k\in \mathbb{Z}_+\). Aaltofunktio on siis muotoa \(\psi (x)=C\sin \dfrac{n\pi x}{L}\).\\
+ \\
+Normitusehdon mukaan täytyy päteä \(\displaystyle \int_0^L C^2\sin ^2 \dfrac{n\pi x}{L}\text{ d}x=1\), josta voidaan ratkaista \(C=\varpm \sqrt{\dfrac{2}{L}}\). Hiukkasen aaltofunktiot ovat siis muotoa $$\psi _n(x)=\sqrt{\dfrac{2}{L}}\sin \dfrac{n\pi x}{L}, n=1, 2, 3, \ldots .$$ \\
+\includegraphics[scale=0.6]{n1} \includegraphics[scale=0.6]{n3} \includegraphics[scale=0.6]{n5}\\
+ \\
+Energiatilat saadaan kaavalla \(E_n=p_n ^2/2m\). Koska nyt seisovalle aallolle pätee \(L=n\lambda _n /2\), saadaan tästä \(\lambda _n = 2L/n\) ja edelleen \(p_n=\dfrac{h}{\lambda _n}=\dfrac{nh}{2L}\). Energiatilat ovat siis $$E_n=\dfrac{p_n^2}{2m}=\dfrac{n^2 h^2}{8mL^2}, n=1, 2, 3, \ldots .$$
+ \\
+Koska aaltofunktio \(\psi _n(x)\) riippuu vain paikasta \(x\), saadaan ajasta riippuvaksi stationaariseksi aaltoyhtälöksi $$\Psi _n (x, t)=\sqrt{\dfrac{2}{L}}\sin \dfrac{n\pi x}{L} \text{e}^{-iE_n t/\hbar}.$$ Koska nyt \(|\text{e}^{-iE_n t/\hbar}|^2 =|\cos (-E_n t/\hbar )+i\sin (-E_n t/\hbar) |^2=|\cos (E_n t/ \hbar)-i\sin (E_n t/\hbar)|^2=\left (\sqrt{\cos ^2 (E_n t/ \hbar)+\sin ^2 (E_n t/ \hbar)}\right )^2=1\), on todennäköisyysjakaumafunktio \(|\Psi _n (x, t)|^2=\dfrac{2}{L} \sin ^2\dfrac{n\pi x}{L}\), joka on ajasta riippumaton ja siten stationaarinen.\\
+ \\
+Jos \(n>1\), on laatikon sisällä kohtia, joissa aaltofunktio ja sen neliö saavat arvon 0. Näitä kutsutaan solmukohdiksi, eikä hiukkasta voi löytää niistä. Tämä poikkeaa klassisesta fysiikasta, jonka mukaan hiukkanen voi sijaita yhtä suurella todennäköisyydellä laatikon jokaisessa kohdassa.
+\newpage
+\section{Tunneloituminen}
+Tarkastellaan hiukkasta, jonka energia on \(E\). Kun hiukkanen kohtaa potentiaalivallin \(U_0\), \(E<U_0\), ei hiukkanen voi klassisen fysiikan mukaan läpäistä estettä. Schrödingerin yhtälön avulla johdettu aaltofunktio on kuitenkin tässä kohdassa nollasta eroava, joten hiukkanen voi tunneloitua vallin läpi tietyllä todennäköisyydellä. Aaltofunktio on vallin ulkopuolella sinimuotoinen ja sen sisällä eksponentiaalinen.\\
+ \\
+ \\
+\includegraphics[scale=0.5]{tunneli}
+ \\
+Voidaan osoittaa, että tunneloitumistodennäköisyyden ollessa pieni se on noin $$T=G\text{e}^{-2\kappa L},$$ jossa \(G=16 \dfrac{E}{U_0} \left (1-\dfrac{E}{U_0}\right )\), \(\kappa=\dfrac{\sqrt{2m(U_0-E)}}{\hbar}\) ja \(L\) on vallin leveys.\\
+ \\
+Tunneloitumistodennäköisyys siis pienenee eksponentiaalisesti vallin leveyden kasvaessa ja on sitä pienempi, mitä suurempi on hiukkasen massa.\\
+ \\
+Tarkastellaan esimerkiksi elektronia, energia 3,0 eV, joka kohtaa 5,0 eV korkean ja 1,0 nm leveän vallin. Tällöin \(G=16\cdot \dfrac{3,0\text{ eV}}{5,0\text{ eV}}\left (1-\dfrac{3,0\text{ eV}}{5,0\text{ eV}}\right )=3,84\) ja \(U_0-E=5,0\text{ eV}-3,0\text{ eV}=3,20435313\cdot 10^{-19}\text{ J}\) sekä \(\kappa =\dfrac{\sqrt{2\cdot 9,10938215\cdot 10^{-31}\text{ kg}\cdot 3,20435313\cdot 10^{-19}\text{ J}}}{6,62606957/2\pi \cdot 10^{-34}\text{ Js}}=7,24525243\cdot 10^{9}\text{ m}^{-1}\), jolloin \(T=3,84\cdot \text{e}^{-2\cdot 7,24525243\cdot 10^{9}\text{ m}^{-1}\cdot 1,0\cdot 10^{-9}\text{ m}}\approx 0,00020 \ \%\), joka on hyvin pieni todennäköisyys.\\
+ \\
+Tunneloitumisella on lukuisia sovelluksia. Esimerkiksi parikaapeleissa elektronit voivat tunneloitua ohuen eristeenä toimivan kuparioksidikerroksen läpi, jolloin sähkövirta pääsee kulkemaan. Ns. Josephsonin ilmiössä sähkövirta kulkee kahden suprajohtavan kappaleen välissä olevan eristeen läpi; tätä voidaan soveltaa mm. heikkojen magneettikenttien mittaamiseen. Myös alfahajoaminen perustuu tunneloitumiseen: alfahiukkasen on ylitettävä potentiaalivalli, joka syntyy puoleensavetävästä ydinvoimasta ja hylkivästä sähköisestä voimasta.
+
+
+\newpage
+\section*{Lähteet}
+\addcontentsline{toc}{section}{Lähteet}
+
+\textbf{Predicting energy levels and probabilities: The Schrödinger equation}. \url{<http://www.nyu.edu/classes/tuckerman/adv.chem/lectures/lecture_6/node1.html>}\\
+ \\
+\textbf{University Physics with Modern Physics}. \url{<ftp://witch.pmmf.hu:2001/Tanszeki_anyagok/Rendszer-_es_Szoftvertechnologiai_Tanszek/Szabo_Levente/Modelling_of_Transport_Processes/textbook/University%20Physics%20with%20Modern%20Physics,%2013th%20Edition.pdf>}\\
+ \\
+\textbf{The Time-Dependent Schrödinger Equation}. \url{<http://vergil.chemistry.gatech.edu/notes/quantrev/node9.html>}\\
+ \\
+\textbf{On the origins of the Schrodinger equation}. \url{<https://phys.org/news/2013-04-schrodinger-equation.html>}\\
+ \\
+\textbf{Quantum Mechanics}. \url{<https://web.njit.edu/~gary/234h/assets/Phys234h_Lecture10.ppt>}\\
+ \\
+\textbf{Quotations by Richard Feynman}. \url{<http://www-history.mcs.st-andrews.ac.uk/Quotations/Feynman.html>}\\
+ \\
+\textbf{Theory of Alpha Decay – Quantum Tunneling}. \url{<https://www.nuclear-power.net/nuclear-power/reactor-physics/atomic-nuclear-physics/radioactive-decay/alpha-decay-alpha-radioactivity/theory-of-alpha-decay-quantum-tunneling/>}\\
+ \\
+\textbf{The birth of wave mechanics (1923–1926)}. \url{<https://www.sciencedirect.com/science/article/pii/S1631070517300774>}\\
+ \\
+\textbf{Erwin Schrödinger Biographical}. \url{<https://www.nobelprize.org/prizes/physics/1933/schrodinger/biographical/>}\\
+ \\
+\textbf{Derivation of one dimensional wave equation}. \url{<https://www.niot.res.in/COAT/coat_pdf/CHAP%20V-%20Wave%20Theory.pdf>}\\
+ \\
+\textbf{Aalto-hiukkasdualismi}. \url{<https://fi.wikipedia.org/wiki/Aalto-hiukkasdualismi>}\\
+ \\
+\textbf{Schrödingerin yhtälö}.
+\url{<https://fi.wikipedia.org/wiki/Schr%C3%B6dingerin_yht%C3%A4l%C3%B6>}\\
+ \\
+\textbf{Josephson effect}.
+\url{<https://en.wikipedia.org/wiki/Josephson_effect>}
+
+
+
+
+\end{document}

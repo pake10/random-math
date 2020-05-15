@@ -1,0 +1,312 @@
+\documentclass[12pt,fleqn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[inline]{enumitem}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+
+
+\date{}
+\title{\textbf{Differentiaaliyhtälöt} \\ Laskuharjoitukset} 
+\author{Jimi Käyrä}
+
+\begin{document}
+\begin{titlepage}
+\maketitle
+\thispagestyle{empty}
+\end{titlepage}
+
+\section*{Harjoitus 2}
+\textbf{Jimi Käyrä}\\
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item [\textbf{2*.}]
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Määritetään yleistä ratkaisua, joten oletetaan, että \(y\neq 0\). Tällöin jakamalla funktiolla \(y\) saadaan muoto \(y'/y=3\). Integroimalla puolittain saadaan edelleen \(\ln |y|=3x+C\), josta seuraa, että \(|y|=\exp (3x+C)=\exp (C)\cdot \exp (3x)\). Yleinen ratkaisu voidaan siis kirjoittaa muodossa \(y=A\cdot \exp(3x)\), jossa \(A\in \mathbf{R}\).\\
+ \\
+Alkuehdosta saadaan edelleen yhtälö \(A\cdot \exp (3\cdot 1)=2\iff A=2/\exp (3)\). Näin ollen alkuarvotehtävän ratkaisuksi saadaan \(y=2/\exp (3)\cdot \exp (3x)=2\cdot \exp (3x-3)=2\cdot \exp (3(x-1))\).
+
+\item Kuten edellä saadaan muoto \(y'/y=-2\), josta integroimalla \(\ln |y|=-2x+C\). Edelleen \(|y|=\exp (-2x+C)=\exp(C)\cdot \exp(-2x)\), joka voidaan kirjoittaa muodossa \(y=A\cdot \exp(-2x)\), \(A\in \mathbf{R}\).\\
+ \\
+Alkuehdosta saadaan yhtälö \(A\cdot \exp (-2\cdot 1)=1\iff A=1/\exp (-2)=\exp(2)\), joten alkuarvotehtävän ratkaisu on \(y=\exp(2)\cdot \exp(-2x)=\exp(-2x+2)=\exp(-2(x-1))\).
+\end{enumerate}
+
+\item [\textbf{4*.}]
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Ilmaiskoon \(P(t)\) lohipopulaation koon (yksikkönä 1 kala) hetkellä \(t\), jossa \(t\) on ilmaistu vuosina. Tällöin muutosnopeudelle voidaan kirjoittaa \(P'(t)=kP(t)-a\), ts. \(\text{d}P/\text{d}t=kP-a\).\\
+ \\
+Separoimalla saadaan \(\dfrac{\text{d}P}{kP-a}=\text{d}t\) ja tästä edelleen integroimalla puolittain \(\dfrac{1}{k}\ln |kP-a|=t+C\iff \ln |kP-a|=k(t+C) \iff |kP-a| = \exp(k(t+C))=A\cdot \exp(kt)\), joka voidaan kirjoittaa muodossa \(kP-a=B\cdot \exp (kt)\iff P=\dfrac{a}{k}+\dfrac{B}{k}\cdot \exp (kt)\) eli \(P=\dfrac{a}{k}+D\cdot \exp(kt)\), \(D\in \mathbf{R}\).
+
+\item Tapauksessa \(a=0\) on \(P(t)=D\cdot \exp(kt)\) ja populaation koko alussa \(D\). Saadaan yhtälö \(D\cdot \exp(kt)=2D\) eli \(\exp(kt)=2\), josta kaksiintumisajalle saadaan \(kt=\ln 2\) eli \(t=\dfrac{\ln 2}{k}\).
+
+\item Yleinen ratkaisu on \(P(t)=\dfrac{55000}{0.2}+D\cdot \exp(0.2t)=2.75\cdot 10^5 +D\cdot \exp(0.2t)\), \(D\in \mathbf{R}\).
+
+\item Tasapainotila ratkaistaan yhtälöstä \(kP(t)-a=0\), josta \(P(t)=a/k\).
+
+\item Lohikannan koko alussa on \(P(0)=\dfrac{a}{k}+D\cdot \exp(k\cdot 0)=\dfrac{a}{k}+D\).\\
+ \\
+Kun kannan koko alussa on suurempi kuin tasapainotila, on \(a/k+D>a/k\) eli \(D>0\). Vastaavasti, kun kannan koko alussa on pienempi kuin tasapainotila, pätee \(a/k+D<a/k\) eli \(D<0\).\\
+ \\
+Toisaalta derivaatta \(P'(t)=kD\cdot \exp(kt)\) on negatiivinen täsmälleen silloin, kun \(D<0\) eli kun kannan koko alussa on pienempi kuin tasapainotila; tällöin \(P(t)\) on aidosti vähenevä eli populaatio pienenee ajan funktiona.\\
+ \\
+Vastaavasti derivaatta \(P'(t)>0\) täsmälleen silloin, kun \(D>0\) eli kun kannan koko alussa on suurempi kuin tasapainotila; tällöin \(P(t)\) on aidosti kasvava eli populaatio kasvaa.\\
+ \\
+Nämä vastaavat myös tapauksia, joissa lohikanta on puolet tasapainotilasta ja lohikanta on kaksi kertaa suurempi kuin tasapainotila.
+
+\end{enumerate}
+\end{enumerate}
+
+\newpage
+\section*{Harjoitus 3}
+\textbf{Jimi Käyrä}\\
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item [\textbf{1*.}] Tasapainotila voidaan ratkaista yhtälöstä \(\lambda-\gamma T=0\), josta \(T=\lambda /\gamma =\dfrac{5.6\cdot 10^8}{0.0014}=4\cdot 10^{11}\).\\
+ \\
+Ottamalla viruskuorma huomioon saadaan differentiaaliyhtälö \(\text{d}T/\text{d}t=\lambda -\gamma T-kVT=\lambda-(\gamma+kV)T\), joka voidaan kirjoittaa muotoon \(\dfrac{\text{d}T}{\lambda-(\gamma+kV)T}=\text{d}t\). Integroimalla puolittain saadaan \(-\dfrac{1}{\gamma+kV} \cdot \ln |\lambda-(\gamma+kV)T|=t+C \iff \ln |\lambda-(\gamma +kV)T|=-(\gamma +kV)(t+C)\) eli \(|\lambda -(\gamma + kV)T|=\exp (-(\gamma +kV)(t+C))\).\\
+ \\
+Tämä voidaan kirjoittaa muodossa \(\lambda-(\gamma +kV)T=D\cdot \exp (-t(\gamma+kV)) \iff (\gamma +kV)T=\lambda - D\cdot \exp (-t(\gamma +kV))\) eli  \(T=\dfrac{1}{\gamma + kV}\cdot (\lambda - D\cdot \exp(-t(\gamma +kV)))\).\\
+ \\
+Tässä alkuehto on \(T(0)=3\cdot 10^{11}\), josta saadaan \(\dfrac{\lambda -D}{\gamma+kV}=3\cdot 10^{11}\), ts. \(\dfrac{5.6\cdot 10^8-D}{0.0014+0.2\cdot 1.0\cdot 10^6}=3\cdot 10^{11}\iff D=-59 999 999 860 000 000\).\\
+ \\
+Mallille voidaan siis kirjoittaa \(T(t)=\dfrac{1}{0.0014+0.2\cdot 1.0\cdot 10^6}\cdot (5.6\cdot 10^8+59 999 999 860 000 000\cdot \exp(-t(0.0014+0.2\cdot 1.0\cdot 10^6))\) eli \(T(t)\approx 2.8\cdot 10^3+3\cdot 10^{11}\cdot \exp(-2\cdot 10^5 t)\).
+
+
+
+
+\item [\textbf{4*.}]
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Olkoon peurakanta \(y(t)\) kilopeuraa, jossa \(t\) on ilmaistu vuosina. Differentiaaliyhtälö on siis \(y'(t)=\dfrac{y(t)}{N}(N-y(t))-b\).
+
+\item Kirjoitetaan yhtälö muotoon \(\dfrac{\text{d}y}{\dfrac{y}{N}(N-y)-b}=\text{d}t\) ja sijoitetaan, jolloin saadaan\\
+\(\dfrac{\text{d}y}{\dfrac{y}{160}(160-y)-30}=\text{d}t\). Tässä nimittäjän nollakohdat saadaan yhtälöstä\\
+ \\
+\(\dfrac{y}{160}(160-y)-30=0\iff y-\dfrac{y^2}{160}-30=0\iff y^2-160y+4800=0\), josta \(y=40\) tai \(y=120\).\\
+ \\
+Määrätään edelleen osamurtokehitelmä yhtälöstä \(\dfrac{1}{-\dfrac{1}{160}(y-40)(y-120)}=\dfrac{A}{y-40}+\dfrac{B}{y-120}\iff A(y-120)+B(y-40)=-160\), josta \(A=2\) ja \(B=-2\).\\
+ \\
+Saadaan siis yhtälö \(2\left (\dfrac{1}{y-40}-\dfrac{1}{y-120}\right )\text{d}y=\text{d}t\), josta integroimalla puolittain \(2 (\ln |y-40|-\ln |y-120|)=t+C \iff \ln \left |\dfrac{y-40}{y-120}\right |=\dfrac{1}{2}(t+C)=\dfrac{1}{2}t+D\) eli \(\left |\dfrac{y-40}{y-120}\right |=\exp \left (\dfrac{1}{2}t+D\right )=E\cdot \exp \left (\dfrac{1}{2}t\right )\). Edelleen voidaan kirjoittaa \(\dfrac{y-40}{y-120}=F\cdot \exp \left (\dfrac{1}{2}t\right )\iff y=40\cdot \dfrac{3F\cdot \exp(t/2)-1}{F\cdot \exp(t/2)-1}\). On oltava \(y(0)=80\) eli \(40\cdot \dfrac{3F-1}{F-1}=80\), josta \(F=-1\). Siispä ratkaisu on \(y=40\cdot \dfrac{-3\cdot \exp(t/2)-1}{-\exp(t/2)-1}=40\cdot \dfrac{3\cdot \exp(t/2)+1}{\exp(t/2)+1}=40\cdot \dfrac{3+\exp (-t/2)}{1+\exp (-t/2)}\).\\
+\\
+Pitkän ajan kuluttua on \(\displaystyle \lim_{t\to \infty} y(t)=40\cdot 3=120\) kilopeuraa.
+
+\item Erikoisratkaisut saadaan yhtälöstä \(\dfrac{y}{N}(N-y)-b=0\iff \dfrac{y^2}{N}-y+b=0\). Tästä saadaan \(y=\dfrac{1\pm \sqrt{1-4\cdot 1/N\cdot b}}{2/N}\). Diskriminantti \(1-4b/N\) määrää reaalisten ratkaisujen lukumäärän: ratkaisuja on kaksi, kun \(1-4b/N>0\iff b<N/4\).\\
+ \\
+Merkitään nyt \(f(y)=-y^2/N+y-b\), jolloin \(f'(y)=-2y/N+1\). Koska \(f'\left (\dfrac{1-\sqrt{1-4b/N}}{2/N} \right )=-2/N\cdot \dfrac{1-\sqrt{1-4b/N}}{2/N}+1=\sqrt{1-4b/N}>0\), ratkaisut eivät suppene kohti tasapainotilaa ja kyseessä on epästabiili piste.\\
+ \\
+Toisaalta \(f'\left (\dfrac{1+\sqrt{1-4b/N}}{2/N} \right )=-2/N\cdot \dfrac{1+\sqrt{1-4b/N}}{2/N}+1=-\sqrt{1-4b/N}<0\), joten ratkaisut suppenevat kohti tasapainotilaa ja kyseessä on stabiili piste.\\
+ \\
+\includegraphics[width=5cm]{tasapainotilat.png}\\
+Kuvassa on esitetty tasapainotilat ja ei-vakioratkaisut b-kohdan erikoistapauksessa. Havaitaan, että läheltä kohtaa \(y=120\) alkavat ei-vakioratkaisut lähestyvät tasapainotilaa asymptoottisesti sekä ylä- että alapuolelta, joten kyseessä on stabiili tasapainotila.\\
+ \\
+Toisaalta läheltä kohtaa \(y=40\) alkavat ei-vakioratkaisut eivät lähesty tasoa \(y=40\) ylä- eikä alapuolelta, joten kyseessä on epästabiili tila.
+
+\item Stabiilin populaation koko saadaan yhtälöstä \(b=N/4\), josta \(N=4b=4\cdot 38=152\) kilopeuraa. Edellisten kohtien tapauksessa saataisiin \(N=4\cdot 30=120\), joka vastaa edellisessä kohdassa havaittua stabiilia tasapainotilaa.
+
+\item Kriittinen kaatolupien määrä on \(b=N/4\). Jos stabiilin populaation koko on \(N=160\) (kilopeuraa), on kriittinen kaatolupien määrä \(b=160/4=40\), joka vastaa c-kohdassa havaittua epästabiilia tasapainotilaa.
+\end{enumerate}
+\end{enumerate}
+
+\newpage
+\section*{Harjoitus 4}
+\textbf{Jimi Käyrä}\\
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item [\textbf{1*.}] Integroivaksi tekijäksi saadaan \(p(x)=\exp \left (\int^x t^2\text{ d}t\right )=\exp \left (\dfrac{1}{3}x^3\right )\). Kertomalla yhtälö puolittain tekijällä \(p(x)\) saadaan \(y'\cdot \exp\left (\dfrac{1}{3}x^3 \right )+y\cdot x^2\cdot \exp \left (\dfrac{1}{3}x^3\right )=x^2\cdot \exp \left (\dfrac{1}{3}x^3\right )\), ts. \(\dfrac{\text{d}}{\text{d}x}\left (y\cdot \exp \left (\dfrac{1}{3}x^3\right )\right )=x^2\cdot \exp \left (\dfrac{1}{3}x^3\right )\). Integroimalla puolittain saadaan edelleen \(y\cdot \exp \left (\dfrac{1}{3}x^3\right )=\exp\left (\dfrac{1}{3}x^3\right )+C\) eli \(y=1+C\cdot \exp\left (-\dfrac{1}{3}x^3\right )\).\\
+ \\
+Edelleen alkuehdosta \(y(0)=2\) seuraa yhtälö \(1+C=2\iff C=1\). Näin ollen alkuarvotehtävän ratkaisu on \(y=1+\exp \left (-\dfrac{1}{3}x^3\right )\).\\
+ \\
+Ratkaisusta saadaan \(y'=-x^2\cdot \exp \left (-\dfrac{1}{3}x^3\right )\). Differentiaaliyhtälön vasemmaksi puoleksi saadaan siis sijoittamalla (varsin triviaalisti...) \(-x^2\cdot \exp \left (-\dfrac{1}{3}x^3\right )+x^2\cdot \left (1+\exp \left (-\dfrac{1}{3}x^3\right )\right )=x^2\), joten saatu \(y\) toteuttaa yhtälön. Edelleen \(y(0)=1+\exp \left (-\dfrac{1}{3}\cdot 0^3\right )=1+1=2\), joten myös alkuehto toteutuu.\\
+ \\
+\item [\textbf{2*.}]Kirjoitetaan yhtälö muotoon \(y'-4xy=3x\). Integroivaksi tekijäksi saadaan \(p(x)=\exp \left (\int^x -4t\text{ d}t\right )=\exp (-2x^2)\). Kertomalla tekijällä \(p(x)\) saadaan \(y'\cdot \exp (-2x^2)-y\cdot 4x\cdot \exp (-2x^2)=3x\cdot \exp(-2x^2)\) eli \(\dfrac{\text{d}}{\text{d}x} \left (y\cdot \exp(-2x^2)\right )=-\dfrac{3}{4}\cdot (-4x)\cdot \exp(-2x^2)\). Integroimalla yhtälö puolittain saadaan \(y\cdot \exp(-2x^2)=-\dfrac{3}{4}\cdot \exp(-2x^2)+C\) eli \(y=-\dfrac{3}{4}+C\cdot \exp(2x^2)\), \(C\in \mathbf{R}\).\\
+ \\
+Edelleen yksityisratkaisulle on oltava \(y(0)=5/4\), mistä seuraa yhtälö \(-3/4+C=5/4\) eli \(C=2\). Yksityisratkaisu on siis \(y=-\dfrac{3}{4}+2\cdot \exp(2x^2)\).
+\end{enumerate}
+
+
+\newpage
+\section*{Harjoitus 5}
+\textbf{Jimi Käyrä}\\
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item [\textbf{2*.}] Tehdään yrite \(y=\text{e}^{kx}\), jolloin \(y'=k\text{e}^{kx}\) ja \(y''=k^2\text{e}^{kx}\). Sijoittamalla saadaan \(k^2\text{e}^{kx}+2k\text{e}^{kx}+10\text{e}^{kx}=0 \iff \text{e}^{kx} (k^2+2k+10)=0\). Karakteristisen yhtälön \(k^2+2k+10=0\) ratkaisuiksi saadaan \(k=-1-3\mathrm{i}\) ja \(k=-1+3\mathrm{i}\).\\
+ \\
+Yleinen ratkaisu on siis \(y=\text{e}^{-x} (A\cos (3x)+B\sin (3x))\), \(A, B\in \mathbf{R}\).\\
+ \\
+On oltava \(y(0)=3\) eli \(A=3\). Toisaalta tällöin \(y'=-\text{e}^{-x} (3\cos (3x)+B\sin (3x))+\text{e}^{-x} (-9\sin (3x) + 3B\cos (3x))=\text{e}^{-x} ((-9-B)\sin (3x)+(3B-3)\cos (3x))\) ja \(y'(0)=3B-3\). On oltava \(y'(0)=0\iff B=1\).\\
+ \\
+Siispä alkuarvotehtävän ratkaisu on \(y=\text{e}^{-x}(3\cos (3x)+\sin (3x))\).
+
+\item [\textbf{3*.}] Karakteristisesta yhtälöstä \(k^2-3k-4=0\) saadaan \(k=-1\) ja \(k=4\), joten yleinen ratkaisu on \(y=A\text{e}^{-x}+B\text{e}^{4x}\), \(A, B\in \mathbf{R}\).\\
+ \\
+On oltava \(y(0)=2\), josta saadaan yhtälö \(A+B=2\). Rajalla termille \(A\text{e}^{-x}\) pätee \(\displaystyle \lim_{x\to \infty} A\text{e}^{-x}=0\); on oltava \(B=0\), jotta myös \(\displaystyle \lim_{x\to \infty} B\text{e}^{4x}=0\). Tällöin \(A=2-B=2\).\\
+ \\
+Yksityisratkaisu on siis \(y=2\text{e}^{-x}\).
+\end{enumerate}
+
+\newpage
+\section*{Harjoitus 6}
+\textbf{Jimi Käyrä}\\
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item [\textbf{1*.}] Käytetään approksimaatiolla \(\sin \theta \approx \theta\) saatua yhtälöä \(\theta ''(t)+\dfrac{g}{L}\theta (t)=0\). Yritteestä \(\theta =\text{e}^{kx}\) saadaan \(\theta ''=k^2\text{e}^{kx}\) ja edelleen sijoittamalla \(k^2\text{e}^{kx}+\dfrac{g}{L}\text{e}^{kx}=0\iff \text{e}^{kx} (k^2+g/L)=0\). Karakteristisen yhtälön \(k^2+g/L=0\) ratkaisut ovat \(k=-\text{i}\sqrt{g/L}\) ja \(k=\text{i} \sqrt{g/L}\).\\
+ \\
+Tällöin yleinen ratkaisu on \(\theta (t)=\text{e}^{0\cdot t} (A\sin (\sqrt{g/L}\cdot t)+B\cos (\sqrt{g/L}\cdot t))=A\sin ( \sqrt{g/L}\cdot t)+B\cos (\sqrt{g/L}\cdot t)\), \(A, B\in \mathbf{R}\).\\
+ \\
+Merkitään nyt yksiköittä \(q=\sqrt{g/L}=\sqrt{9.81/2}=\sqrt{4.905}\), jolloin tarkastellaan yleistä ratkaisua \(\theta (t)=A\sin (qt)+B\cos (qt)\). Kuvataan \(A\) ja \(B\) koordinaatiston pisteiksi \((A, B)\), jolloin voidaan kirjoittaa napakoordinaattiesitys \(A=r\cos \gamma\), \(B=r\sin \gamma\). Kirjoitetaan edelleen \(\theta (t)=r\cos \gamma \sin (qt)+r\sin \gamma \cos (qt)=r(\cos \gamma \sin (qt)+\sin \gamma \cos (qt))\), ts. \(\theta (t)=r\sin (qt+\gamma)\).\\
+ \\
+Tästä esityksestä havaitaan, että yleinen ratkaisu kuvaa siniaaltoa, jonka amplitudi on \(r=\sqrt{A^2+B^2}\), perusjakso \(2 \pi /q\) ja vaihe \(\gamma\).\\
+ \\
+Koska \(\dfrac{60}{2\pi /q}=\dfrac{60}{2\pi /\sqrt{4.905}}\approx 21.15\), sisältyy minuutin (60 s) mittaiseen ajanjaksoon 21 kokonaista jaksoa, ts. 42 kokonaista puolijaksoa eli 42 nollakohtaa. Minuutin aikana heiluri ohittaa siis tasapainotilansa 42 kertaa.\\
+\item [\textbf{2*.}]
+Karakteristiseksi yhtälöksi saadaan \(k^2+\omega ^2=0\), josta \(k=-\text{i}\omega\) tai \(k=\text{i}\omega\).\\
+ \\
+Tutkitaan kuitenkin aluksi tapaus \(\omega =0\). Tällöin differentiaaliyhtälö pelkistyy muotoon \(y''=0\), jonka ratkaisuksi saadaan \(y=Ax+B\). Ei ole kuitenkaan olemassa kertoimia \(A\) ja \(B\), joille \(y(0)=y(1)=0\), mutta yleisesti \(y(x)\neq 0\). Siispä oletetaankin, että \(\omega \neq 0\).\\
+ \\
+Karakteristisen yhtälön nojalla saadaan yleinen ratkaisu \(y(x)=\text{e}^{0\cdot x} (A\sin (\omega x)+B\cos (\omega x))=A\sin (\omega x)+B\cos (\omega x)\), \(A, B\in \mathbf{R}\). On oltava \(y(0)=0\) eli \(B=0\). Tämä rajoittaa ratkaisuksi \(y(x)=A\sin (\omega x)\). Lisäksi on oltava \(y(1)=0\) eli \(A\sin \omega = 0\). Ratkaisu on oltava nollasta eroava, joten \(A\neq 0\). Siis täytyy olla \(\sin \omega =0 \iff \omega =n\pi\), \(n\in \mathbf{Z}\). Täytyy myös olla \(n\neq 0\), jotta ratkaisu ei ole vakiofunktio.\\
+ \\
+Vastaavat ratkaisufunktiot ovat \(y(x)=A\sin (n\pi x)\), \(A\in \mathbf{R} \setminus \{0\}\), \(n\in \mathbf{Z} \setminus \{0\}\).\\
+Toisaalta, jos \(n>0\), niin parittomuuden nojalla \(A\sin (-n\pi x)=-A\sin (n\pi x)=B\sin (n\pi x)\). Voitaisiin siis rajata \(n=1, 2, \ldots\), jos sallitaan edelleen \(B\in \mathbf{R}\setminus \{0\}\).
+\end{enumerate}
+
+\newpage
+\section*{Harjoitus 7}
+\LaTeX\\
+\textbf{Jimi Käyrä}\\
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item [\textbf{2*.}] Ratkaistaan ensin vastaava homogeeniyhtälö \(4y''+4y'+y=0\). Karakteristiseksi yhtälöksi saadaan \(4k^2+4k+1=0\iff k^2+k+\dfrac{1}{4}=0\), ts. \(\left (k+\dfrac{1}{2}\right )^2=0\). Siispä saadaan kaksoisjuuri \(k=-\dfrac{1}{2}\) ja siten homogeeniyhtälölle ratkaisu \(y=A\text{e}^{-\frac{1}{2}x}+Bx\text{e}^{-\frac{1}{2}x}\), \(A, B\in \mathbf{R}\).\\
+ \\
+Siirrytään sitten tutkimaan epähomogeenista yhtälöä \(4y''+4y'+y=\text{e}^{-x}\). Tehdään nyt ratkaisuyrite \(y=C\text{e}^{-x}\), josta seuraa \(y'=-C\text{e}^{-x}\) ja \(y''=C\text{e}^{-x}\). Sijoittamalla saadaan differentiaaliyhtälön vasemmaksi puoleksi \(4C\text{e}^{-x}-4C\text{e}^{-x}+C\text{e}^{-x}=C\text{e}^{-x}\), joten vaaditaan, että \(C=1\).\\
+ \\
+Epähomogeeniyhtälön yleinen ratkaisu on siis summa \(y=A\text{e}^{-\frac{1}{2}x}+Bx\text{e}^{-\frac{1}{2}x}+\text{e}^{-x}\), \(A, B\in \mathbf{R}\).\\
+ \\
+\item [\textbf{5*.}] Ratkaistaan ensin vastaava homogeeniyhtälö \(y''+25y=0\). Karakteristiseksi yhtälöksi saadaan \(k^2+25=0\), josta \(k=-5\text{i}\) tai \(k=5\text{i}\). Siispä homogeeniyhtälön ratkaisut ovat \(y=\text{e}^{0\cdot t} (A \sin (5t)+B\cos (5t))=A\sin (5t)+B\cos (5t)\), \(A, B\in \mathbf{R}\).\\
+ \\
+Siirrytään tutkimaan alkuperäistä yhtälöä \(y''+25y=2\sin (5t)\). Tehdään "valistunut arvaus" ja valitaan yrite \(y=Ct\sin (5t)+Dt\cos (5t)=t(C\sin (5t)+D\cos (5t))\), jolloin \[y'=C\sin (5t)+D\cos (5t) + t(5C\cos (5t)-5D\sin (5t))=(C-5Dt)\sin (5t)+(D+5Ct)\cos (5t)\] ja edelleen \(y''=-5D\sin (5t)+5(C-5Dt)\cos (5t)+5C\cos (5t)-5(D+5Ct)\sin (5t)\) eli \(y''=(-10D-25Ct)\sin (5t)+(10C-25Dt)\cos (5t).\)\\
+ \\
+Sijoittamalla alkuperäiseen yhtälöön saadaan vasemmaksi puoleksi \[(-10D-25Ct)\sin (5t)+(10C-25Dt)\cos (5t)+25(Ct\sin (5t)+Dt\cos (5t))\] eli \(-10D\sin (5t)+10C\cos (5t)\). Vaaditaan siis, että \(C=0\) ja toisaalta \(-10D=2\iff D=-\dfrac{1}{5}\). Saadaan siis ratkaisu \(y=-\dfrac{1}{5}t\cos (5t)\).\\
+ \\
+Siispä yleinen ratkaisu on \(y=A\sin (5t)+B\cos (5t)-\dfrac{1}{5}t\cos (5t)\). Ehdosta \(y(0)=0\) seuraa \(B=0\), jolloin ratkaisut ovat \(y=A\sin (5t)-\dfrac{1}{5}t\cos (5t)\). Edelleen \[y'=5A\cos (5t)-\dfrac{1}{5}\cos (5t)+t\sin (5t)=\left (5A-\dfrac{1}{5}\right )\cos (5t)+t\sin (5t)\] ja vaaditaan \(y'(0)=0\), joten saadaan \(5A-\dfrac{1}{5}=0\), ts. \(A=1/25\).\\
+ \\
+Näin ollen yksityisratkaisu on \(y=\dfrac{1}{25}\sin (5t)-\dfrac{1}{5}t\cos (5t)\).
+\end{enumerate}
+
+
+\newpage
+\section*{Harjoitus 8}
+\textbf{Jimi Käyrä}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item [\textbf{2*.}] Laplace-muunnoksen määritelmän nojalla \(\displaystyle \mathcal{L}(f')=\int_0^{\infty} f'(t)\text{e}^{-st}\text{ d}t\), josta osittaisintegroinnilla ja Laplace-muuntuvuuden nojalla \[\displaystyle \mathcal{L}(f')=f(t)\text{e}^{-st} \Big|_0^{\infty}-\int_0^{\infty} -s\cdot f(t)\text{e}^{-st}\text{ d}t=-f(0)+s \underbrace{\int_0^{\infty} f(t)\text{e}^{-st}\text{ d}t}_{=\mathcal{L}(f)}.\]\\
+Otetaan yhtälöstä \(y'+y=\sin (2t)\) puolittain Laplace-muunnos, jolloin lineaarisuuden nojalla saadaan \(\mathcal{L}(y')+\mathcal{L}(y)=\mathcal{L}(\sin (2t))\) eli \(-y(0)+sY(s)+Y(s)=\dfrac{2}{s^2+2^2}\). Alkuehdosta \(y(0)=0\), joten voidaan kirjoittaa \(sY(s)+Y(s)=\dfrac{2}{s^2+4}\iff Y(s)\cdot (s+1)=\dfrac{2}{s^2+4}\) eli \(Y(s)=\dfrac{2}{(s^2+4)(s+1)}\).\\
+ \\
+Käänteismuunnosta varten muodostetaan osamurtokehitelmä \(\dfrac{2}{(s^2+4)(s+1)}=\dfrac{As+B}{s^2+4}+\dfrac{C}{s+1}\), josta \((As+B)(s+1)+C(s^2+4)=2\iff (A+C)s^2+(A+B)s+(B+4C)=2\).\\
+ \\
+Vaaditaan \(A+C=0, A+B=0\) ja \(B+4C=2\), joista \(A=-2/5\) ja \(B=C=2/5\).\\
+ \\
+Voidaan siis kirjoittaa \(Y(s)=\dfrac{-\frac{2}{5}s+\frac{2}{5}}{s^2+4}+\dfrac{\frac{2}{5}}{s+1}=-\dfrac{2}{5}\cdot \dfrac{s}{s^2+4}+\dfrac{1}{5}\cdot \dfrac{2}{s^2+2^2}+\dfrac{2}{5}\cdot \dfrac{1}{s+1}\).\\
+ \\
+Hyödynnetään jälleen lineaarisuutta ja otetaan käänteismuunnos puolittain, jolloin saadaan ratkaisu \(y=-\dfrac{2}{5}\cos (2t)+\dfrac{1}{5}\sin (2t)+\dfrac{2}{5}\text{e}^{-t}\).
+
+\item [\textbf{4*.}]
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Kirjoitetaan nyt \(F(s)=\dfrac{s-1}{s^2+9}=\dfrac{s}{s^2+9}-\dfrac{1}{s^2+9}=\dfrac{s}{s^2+3^2}-\dfrac{1}{3}\cdot \dfrac{3}{s^2+3^2}\), jolloin\\
+ \\
+taulukoiden avulla saadaan käänteismuunnos \(f(t)=\mathcal{L}^{-1} (F(s))=\cos (3t)-\dfrac{1}{3}\sin (3t)\).
+
+\item Nimittäjän nollakohdat saadaan yhtälöstä \(s^2-2s-3=0\), josta \(s=-1\) tai \(s=3\). Voidaan siis kirjoittaa tekijäesitys \((s+1)(s-3)\) ja muodostaa osamurtokehitelmä \(\dfrac{8}{s^2-2s-3}=\dfrac{A}{s+1}+\dfrac{B}{s-3}\), ts. \(A(s-3)+B(s+1)=8\iff (A+B)s
++(B-3A)\). Vaaditaan siis \(A+B=0\iff A=-B\) ja \(B-3A=8\iff B-3\cdot (-B)=8\), josta \(4B=8\iff B=2\) ja \(A=-2\).\\
+ \\
+On siis \(F(s)=-\dfrac{2}{s+1}+\dfrac{2}{s-3}=-2\cdot \dfrac{1}{s-(-1)}+2\cdot \dfrac{1}{s-3}\) ja ottamalla käänteismuunnos saadaan \(f(t)=-2\text{e}^{-t}+2\text{e}^{3t}\).
+
+\item Nyt \(F(s)=\dfrac{12}{s^5}=12\dfrac{1}{s^5}\), joten ottamalla käänteismuunnos saadaan \(f(t)=12\cdot \dfrac{t^{5-1}}{(5-1)!}=\dfrac{1}{2}t^4\).
+
+
+
+\end{enumerate}
+\end{enumerate}
+
+\newpage
+\section*{Harjoitus 9}
+\textbf{Jimi Käyrä}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item [\textbf{1*.}]
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Ottamalla Laplace-muunnos puolittain saadaan\\ \(s^2 Y(s)-sy(0)-y'(0)+4(sY(s)-y(0))+13Y(s)=0\) ja alkuehdot huomioimalla \(s^2 Y(s)-s-(-2)+4(sY(s)-1)+13Y(s)=0 \iff (s^2+4s+13)Y(s)=s+2\), ts. \(Y(s)=\dfrac{s+2}{s^2+4s+13}=\dfrac{s-(-2)}{(s-(-2))^2+3^2}\).\\ Käänteismuunnoksella saadaan ratkaisu \(y(t)=\text{e}^{-2t}\cos (3t)\).
+
+\item Muunnetaan vasen puoli kuten edellä, jolloin saadaan \((s^2+4s+13)Y(s)=s+6\text{e}^{-2s}+2\) eli \(Y(s)=\dfrac{s+6\text{e}^{-2s}+2}{s^2+4s+13}=\dfrac{s+2}{s^2+4s+13}+\dfrac{6\text{e}^{-2s}}{s^2+4s+13}\). Tämä voidaan kirjoittaa edelleen muodossa \(Y(s)=\dfrac{s-(-2)}{(s-(-2))^2+3^2}+2\text{e}^{-2s}\cdot \dfrac{3}{(s-(-2))^2+3^2}\). Ottamalla käänteismuunnos saadaan \(y(t)=\text{e}^{-2t}\cos (3t)+2H(t-2)\text{e}^{-2(t-2)} \sin (3(t-2))\).
+\end{enumerate}
+
+\item [\textbf{2*.}]
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Otetaan Laplace-muunnos puolittain, jolloin saadaan \(s^2 Y(s)-sy(0)-y'(0)+6(sY(s)-y(0))+8Y(s)=\text{e}^{-s}\) ja alkuehdot sijoittamalla \(s^2 Y(s)+6s Y(s)+8Y(s)=\text{e}^{-s}\), ts. \((s^2+6s+8)Y(s)=\text{e}^{-s}\iff Y(s)=\text{e}^{-s}\cdot \dfrac{1}{s^2+6s+8}=\text{e}^{-s} \cdot \dfrac{1}{(s+2)(s+4)}\).\\
+Osamurtokehitelmästä \(\dfrac{1}{(s+2)(s+4)}=\dfrac{A}{s+2}+\dfrac{B}{s+4}\) saadaan \(A(s+4)+B(s+2)=1\iff (A+B)s+(4A+2B)=1\), joten vaaditaan \(A+B=0, 4A+2B=1\) eli \(A=1/2, B=-1/2\).\\
+ \\
+Siispä voidaan kirjoittaa \(Y(s)=\text{e}^{-s}\left ( \dfrac{1}{2}\cdot \dfrac{1}{s-(-2)}-\dfrac{1}{2}\cdot \dfrac{1}{s-(-4)} \right )\) ja käänteismuunnoksella saadaankin \(y(t)=\dfrac{1}{2} H(t-1) (\text{e}^{-2(t-1)}-\text{e}^{-4(t-1)})\).
+
+\item Vasen puoli kuten edellä. Otetaan Laplace-muunnos puolittain, jolloin saadaan \((s^2+6s+8)Y(s)=4/s-4\text{e}^{-3s}\cdot 1/s\), ts. \(Y(s)=\dfrac{\frac{4}{s}-\frac{4\text{e}^{-3s}}{s}}{s^2+6s+8}=\dfrac{4/s}{(s+2)(s+4)}-\dfrac{\frac{4\text{e}^{-3s}}{s}}{(s+2)(s+4)}\). Kirjoitetaan edelleen \(Y(s)=\dfrac{4}{s(s+2)(s+4)}-\text{e}^{-3s}\cdot \dfrac{4}{s(s+2)(s+4)}\).\\
+ \\
+Jälleen osamurtokehitelmästä \(\dfrac{4}{s(s+2)(s+4)}=\dfrac{A}{s}+\dfrac{B}{s+2}+\dfrac{C}{s+4}\) saadaan \(A(s+2)(s+4)+Bs(s+4)+Cs(s+2)=4\iff (A+B+C)s^2 + (6A+4B+2C)s + 8A = 4\) ja vaaditaan, että \(A+B+C=0, 6A+4B+2C=0, 8A=4\). Tästä \(A=C=1/2\) ja \(B=-1\).\\
+ \\
+Siispä nähdään, että\\ \(Y(s)=\dfrac{1}{2}\cdot \dfrac{1}{s}-\dfrac{1}{s-(-2)}+\dfrac{1}{2}\cdot \dfrac{1}{s-(-4)}-\text{e}^{-3s}\left (\dfrac{1}{2}\cdot \dfrac{1}{s}-\dfrac{1}{s-(-2)}+\dfrac{1}{2}\cdot \dfrac{1}{s-(-4)}\right )\). Käänteismuunnoksella saadaan ratkaisu\\ 
+\\ \(y(t)=\dfrac{1}{2}-\text{e}^{-2t}+\dfrac{1}{2}\text{e}^{-4t}-H(t-3)\left (\dfrac{1}{2}-\text{e}^{-2(t-3)}+\dfrac{1}{2}\text{e}^{-4(t-3)}\right )\).
+
+\end{enumerate}
+\end{enumerate}
+
+\newpage
+\section*{Harjoitus 10}
+\textbf{Jimi Käyrä}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item [\textbf{1*.}] Lähdetään aluksi tarkastelemaan homogeeniyhtälöä \(Li''(t)+Ri'(t)+\dfrac{1}{C}i(t)=0\). Saadaan karakteristinen yhtälö \(Lk^2+Rk+1/C=0\), josta \(k=-\dfrac{R}{2L}\pm \dfrac{\sqrt{R^2-4L/C}}{2L}\equiv m_1, m_2\).\\
+ \\
+Jos nyt \(R^2=4L/C\), niin kyseessä on kriittinen vaimennus ja homogeeniyhtälön ratkaisut ovat muotoa \(i_\text{H}(t)=A\text{e}^{-Rt/2L}+Bt\text{e}^{-Rt/2L}=\text{e}^{-Rt/2L}(A+Bt)\) ja pitkän ajan kuluttua \(i_\text{H}(t)\to 0\), sillä lineaarisen funktion kasvu "häviää" eksponenttifunktion voimakkaalle vähenemiselle.\\
+ \\
+Tapauksessa \(R^2>4L/C\) kyseessä on ylivaimennus ja tällöin ratkaisut ovat muotoa \(i_\text{H}=A\text{e}^{m_1 t}+B\text{e}^{m_2 t}\). Koska \(R, L, C >0\), havaitaan, että on aina \(m_1, m_2 < 0\) ja siten myös pitkän ajan kuluttua \(i_\text{H}\to 0\).\\
+ \\
+Edelleen tapauksessa \(R^2>4L/C\) on kyseessä alivaimennus ja karakteristisella yhtälöllä on tällöin kompleksijuuret \(m_1=a+b\text{j}\) ja \(m_2=a-b\text{j}\), \(a<0, b>0\). Ratkaisu on tällöin muotoa \(i_\text{H}=\text{e}^{at}(A\cos (bt)+B\sin (bt))\) ja edelleen \(i_\text{H}\to 0\) pitkän ajan kuluttua; siispä joka tapauksessa ratkaisu "käyttäytyy nätisti" pitkän ajan kuluttua, ts. \(\displaystyle \lim_{t\to \infty} i_\text{H}=0\).\\
+ \\
+Siirrytään sitten tarkastelemaan täydellistä yhtälöä \(Li''(t)+Ri'(t)+\dfrac{1}{C} i(t)=V_0 \omega \cos (\omega t)\). Kokeillaan suoraan ratkaisuyritettä \(i(t)=A\sin (\omega t-\gamma)\), josta seuraa \(i'(t)=A\omega \cos(\omega t-\gamma)\) ja \(i''(t)=-A\omega ^2 \sin(\omega t-\gamma)\). Sijoittamalla nämä saadaan vasemmaksi puoleksi\\ \(-LA \omega ^2\sin (\omega t - \gamma)+RA \omega \cos (\omega t-\gamma)+\dfrac{1}{C}A\sin (\omega t-\gamma)\), ts. \\ \((A/C-LA\omega ^2) \sin (\omega t-\gamma)+RA\omega \cos(\omega t-\gamma)\).\\
+ \\
+Toisaalta oikea puoli voidaan esittää muodossa\\ \(V_0 \omega \cos(\omega t)=V_0 \omega \cos(\omega t-\gamma +\gamma)=V_0 \omega \cos \gamma \cos(\omega t-\gamma) - V_0 \omega \sin \gamma \sin (\omega t-\gamma)\).\\
+ \\
+Vertailemalla sinin ja kosinin kertoimia saadaan pari \\ \(\begin{cases} (A/C-LA\omega ^2)=-V_0 \omega \sin \gamma\ \\ RA\omega =V_0\omega \cos \gamma \end{cases}  \iff \begin{cases} A(L\omega ^2-1/C)=V_0 \omega \sin \gamma \\ RA\omega =V_0\omega \cos \gamma .\end{cases}\)\\
+ \\
+Jakamalla yhtälöt puolittain (ehdolla \(\cos \gamma \neq 0\)) saadaan \(\tan \gamma =\dfrac{L\omega ^2-1/C}{R\omega}\) eli vaiheelle pätee \(\gamma = \arctan \left (\dfrac{L\omega ^2-1/C}{R\omega}\right )=\arctan \left (\dfrac{L\omega-\frac{1}{\omega C}}{R} \right )=\arctan \left (\dfrac{X_\text{L}-X_\text{C}}{R}\right )\).\\
+ \\
+Tarkastellaan sitten amplitudia. Neliöimällä kerroinyhtälöt saadaan pari \\ \(\begin{cases} A^2 (L\omega ^2-1/C)^2=V_0^2 \omega ^2 \sin^2 \gamma \\ R^2 A^2 \omega ^2=V_0^2 \omega ^2\cos^2 \omega \end{cases}\) ja edelleen summaamalla nämä saadaan \\ \\ \\ \(V_0^2\omega ^2 (\sin^2 \omega +\cos^2\omega)=R^2 A^2 \omega^2+A^2 (L\omega ^2-1/C)^2\), ts. \(A^2 (R^2 \omega ^2+(L\omega ^2-1/C)^2)=V_0^2 \omega^2\) ja vihdoin \(A=\dfrac{V_0 \omega}{\sqrt{R^2 \omega ^2+(L\omega ^2-1/C)^2}}\).
+ \\
+  \\
+  \\
+Todetaan siis, että täydellisen yhtälön ratkaisu on muotoa \(i(t)=i_\text{H}(t)+A\sin (\omega t+\gamma)\), jossa \(i_\text{H}(t)\) on homogeeniyhtälön ratkaisu ja \(A, \omega\) sekä \(\gamma\) ovat edellä johdetut kertoimet. Edellä on todettu, että pitkän ajan kuluttua \(i_\text{H}(t)\to 0\).\\
+ \\
+Koska jännite \(V(t)=V_0 \sin (\omega t)\), vaaditaan \(\gamma =0\), jotta virta ja jännite ovat pitkän ajan kuluttua samassa vaiheessa. On siis oltava \(\dfrac{X_\text{L}-X_\text{C}}{R}=0\), ts. \(X_\text{L}=X_\text{C}\) eli kapasitanssin ja induktanssin reaktanssien on oltava yhtä suuret.\\
+ \\
+Kohdan 2 tapauksessa täytyy siis olla \(C=\dfrac{1}{L\omega ^2}=\dfrac{1}{0,5\text{ H}\cdot (200\text{ (rad/s))}^2}=5\cdot 10^{-5}\text{ F}\). Kun \(L\) ja \(C\) on kiinnitetty, resistanssi vaikuttaa siihen, miten virta käyttäytyy ennen "asettumistaan" eli onko kyseessä tapaus \(R^2=4L/C\), \(>4L/C\) vai \(<4L/C\). Vastaavasti on nähty, että \(V_0\) vaikuttaa amplitudiin.\\
+ \\
+Kohdassa 3 muut suureet tunnetaan ja maksimoitavana on kulmataajuudesta riippuva amplitudifunktio. Merkitään nyt yksiköittä \(A(\omega )=\dfrac{V_0 \omega}{\sqrt{R^2\omega ^2+(L\omega ^2-1/C)^2}}=\dfrac{500\omega}{\sqrt{10^4 \omega^2+(\omega^2-10^4)^2}}\), jolloin derivaatta\\ \\ \(A'(\omega)=-\dfrac{500(\omega^4-10^8)}{(\omega^4-10^4 \omega^2+10^8)^{3/2}}\).\\ \\ Tästä saadaan ehdon \(\omega >0\) toteuttava nollakohta \(\omega =100\), joka onneksi osoittautuu kulkukaavion avulla funktion \(A(\omega)\) maksimikohdaksi.\\
+ \\
+Tällöin vaihe-erolle saadaan \(\gamma =\arctan \left ( \dfrac{1\text{ H}\cdot 100\text{ rad/s}-\frac{1}{100\text{ rad/s}\cdot 100\cdot 10^{-6}\text{ F}}}{100\text{ }\Omega}\right )=0\text{ (rad)}\),\\ joten pitkän ajan kuluttua virta ja jännite ovat samassa vaiheessa.
+
+\end{enumerate}
+
+\newpage
+\section*{Harjoitus 11}
+\textbf{Jimi Käyrä}
+\begin{enumerate}[label=\textbf{\arabic*.}]
+\item [\textbf{2*.}]
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Ylemmästä yhtälöstä saadaan \(6z=y'+4y\iff z=\dfrac{1}{6}y'+\dfrac{2}{3}y\) ja edelleen \(z'=\dfrac{1}{6}y''+\dfrac{2}{3}y'\). Sijoittamalla nämä alempaan yhtälöön saadaan \(\dfrac{1}{6}y''+\dfrac{2}{3}y'=-3y+5\left (\dfrac{1}{6}y'+\dfrac{2}{3}y\right )\), ts. \(\dfrac{1}{6}y''+\dfrac{2}{3}y'=-3y+\dfrac{5}{6}y'+\dfrac{10}{3}y\iff \dfrac{1}{6}y''-\dfrac{1}{6}y'-\dfrac{1}{3}y=0\) ja edelleen \(y''-y'-2y=0\).\\
+ \\
+Karakteristisesta yhtälöstä \(k^2-k-2=0\) saadaan reaalijuuret \(k=-1\) ja \(k=2\), jolloin ratkaisu on \(y=A\text{e}^{-x}+B\text{e}^{2x}\). Ehdosta \(y(0)=3\) seuraa edelleen, että \(A+B=3\)  \textbf{(1)}.\\
+ \\
+Saadusta ratkaisusta seuraa, että \(y'=-A\text{e}^{-x}+2B\text{e}^{2x}\). Sijoittamalla nämä saadaan \(z=\dfrac{1}{6}\left (-A\text{e}^{-x}+2B\text{e}^{2x}\right )+\dfrac{2}{3}\left (A\text{e}^{-x}+B\text{e}^{2x}\right )=\dfrac{1}{2}A\text{e}^{-x}+B\text{e}^{2x}\). Ehdon \(z(0)=2\) nojalla on oltava \(\dfrac{1}{2}A+B=2\iff A+2B=4\). Tästä ja yhtälöstä \textbf{(1)} seuraa, että \(A=2\) ja \(B=1\).\\
+ \\
+Siispä saadaan ratkaisupari \(\begin{cases} y(x)=2\text{e}^{-x}+\text{e}^{2x} \\ z(x)=\text{e}^{-x}+\text{e}^{2x}. \end{cases}\) \\
+ \\  
+
+\item Kirjoitetaan pari muotoon \(y'=z+1\), \(z'=-y\). Ensimmäisestä yhtälöstä saadaan \(z=y'-1\) ja edelleen \(z'=y''\). Sijoittamalla tämä jälkimmäiseen yhtälöön saadaan \(y''=-y\iff y''+y=0\).\\
+ \\
+Saadaan karakteristinen yhtälö \(k^2+1=0\), josta \(k=-\text{i}\) tai \(k=\text{i}\), joten ratkaisu on \(y=A\cos (x)+B\sin (x)\).\\
+ \\
+Löydetystä ratkaisusta seuraa \(y'=-A\sin (x)+B\cos (x)\). Sijoittamalla saadaankin \\ \(z=-A\sin (x)+B\cos (x)-1\), joten ratkaisupari on \(\begin{cases} y(x)=A\cos (x)+B\sin (x) \\ z(x)=-A\sin (x)+B\cos (x)-1, \end{cases} \\A, B\in \mathbf{R}\).
+
+\end{enumerate}
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,62 @@
+\documentclass[12pt,finnish]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[rightcaption]{sidecap}
+\usepackage{wrapfig}
+\usepackage{babel}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\setlist[enumerate,1]{leftmargin=*}
+
+\begin{document}
+ \section*{Lineaarialgebra}
+ 
+\vspace{5mm}
+ 
+\begin{questions}
+\bfseries
+\question
+\mdseries
+Määritellään avaruudessa \(\mathbb{R}^3\) vektorit \(A=\begin{bmatrix}
+       1         \\
+       2         \\
+       3
+     \end{bmatrix}\)
+     ja \(B=\begin{bmatrix}
+       -1         \\
+       3         \\
+       5
+     \end{bmatrix}\).
+
+\begin{enumerate}[label=\textbf{\alph*)}]
+\item Laske vektoreiden sisätulo.
+\item Vektorit virittävät origon kautta kulkevan tason. Määrää tason yhtälö muodossa \(ax+by+cz+d=0\).
+\end{enumerate}
+
+\bfseries
+\question
+\mdseries
+Olkoon \(A=\begin{bmatrix}
+       1&1&2         \\
+       k&1&1         \\
+       1&k&2
+     \end{bmatrix}\), \(k\in \mathbb{R}\). Määritä \(\det A\). Millä \(k\):n arvoilla matriisi \(A\) on kääntyvä?
+
+\bfseries
+\question
+\mdseries  
+Matriisi \(Q\) on \emph{ortogonaalinen}, jos sen transpoosimatriisi on sama kuin sen käänteismatriisi eli \(QQ^{\text{T}}=I\). Osoita, että jokainen ortogonaalinen \(2\times 2\)-matriisi voidaan kirjoittaa joko muotoon $$\begin{bmatrix} \cos \varphi & \sin \varphi \\ -\sin \varphi & \cos \varphi \end{bmatrix} \text{ tai } \begin{bmatrix} \cos \varphi & \sin \varphi \\ \sin \varphi & -\cos \varphi \end{bmatrix},$$ missä \(0\leq \varphi \leq 2\pi\).
+
+\bfseries
+\question
+\mdseries
+Ratkaise Gaussin-Jordanin eliminointimenetelmän avulla yhtälöryhmä \(\begin{cases} 2x-2y+4z&=0 \\ x+z&=0 \\ 2x-y+3z&=0. \end{cases}\)
+\end{questions}
+\thispagestyle{empty}
+
+
+\end{document}
+

@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\date{}
+
+\title{\textbf{Matemaattinen fysiikka I}}
+\author{Jimi Käyrä}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{icomma}
+\usepackage{pgfplots}
+\usepackage{array}
+\usepackage{eurosym}
+\usepackage{arydshln}
+\usepackage{relsize}
+\usepackage[version=4]{mhchem}
+\pgfplotsset{compat=1.8}
+\usepackage{mathtools}
+\usepackage{bm}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{matrix}
+\renewcommand{\contentsname}{Sisällys}
+\begin{document}
+\begin{titlepage}
+\maketitle
+\tableofcontents
+\end{titlepage}
+
+\section{Liikkeeseen liittyviä suureita ja ympyräliike}
+Kappaleen paikka voidaan esittää paikkavektorina \(\mathbf{r}\). Tällöin kappaleen nopeus on $$\mathbf{v}=\frac{\text{d}\mathbf{r}}{\text{d}t}=v_x \mathbf{i}+v_y \mathbf{j}+v_z \mathbf{k}.$$ Vauhti kuvaa nopeuden suuruutta, joten se on nopeusvektorin normi $$|\mathbf{v}|=\sqrt{v_x^2+v_y^2+v_z^2}.$$ Kiihtyvyys kuvaa nopeuden muutosta eli $$\mathbf{a}=\frac{\text{d}\mathbf{v}}{\text{d}t}=\frac{\text{d}^2\mathbf{r}}{\text{d}t^2}.$$ Ympyräliikkeessä kappale liikkuu ympyrän muotoisella radalla. Tällöin on hyödyllistä esittää liike napakoordinaatistossa, jolloin $$\begin{cases}x=r\cos (\omega t+\varphi) \\ y=r\sin (\omega t+\varphi).\end{cases}$$ Tässä \(r\) on ympyräradan säde, \(\omega\) kulmanopeus ja \(\varphi\) vaihe. Tasaisessa ympyräliikkeessä \(\omega\) on vakio.\\
+ \\
+\textbf{Esim.} Kappale kiertää origoa etäisyydellä \(r\) ja kulmanopeudella \(\varphi\). Määritä kappaleen vauhti ja kiihtyvyyden suuruus.\\
+ \\\
+\textbf{Esim.} Osoita, että edellisessä esimerkissä kappaleen paikka- ja kiihtyvyysvektori ovat kohtisuorassa toisiaan vastaan.\\
+ \\
+\textbf{Esim.} Auto kiertää 5,0 m-säteistä liikenneympyrää. Tietyllä hetkellä auton ratanopeudeksi mitatiin 4 m/s. Tällöin auton tangenttikiihtyvyys oli 2,0 m/s\(^2\). Mikä oli auton kiihtyvyyden suuruus ja suunta tällä hetkellä?
+
+\newpage
+\section{Heittoliike}
+Heittoliikkeessä kappale saatetaan liikkeeseen antamalla sille alkunopeus \(v_0\), minkä jälkeen kappaleeseen vaikuttaa vain painovoima ja väliaineen vastus.\\
+ \\
+\textbf{Pystysuora heittoliike}\\
+ \\
+Nousuaika: \(t=\dfrac{v_0}{g}\)\\
+ \\
+Lentoaika: \(T=\dfrac{2v_0}{g}\)\\
+ \\
+Lakikorkeus: \(h=\dfrac{v_0^2}{2g}\)\\
+ \\
+\textbf{Vino heittoliike}\\
+ \\
+Nousuaika: \(t=\dfrac{v_0 \sin \alpha}{g}\)\\
+ \\
+Lentoaika: \(T=\dfrac{2v_0 \sin \alpha}{g}\)\\
+ \\
+Lakikorkeus: \(h=\dfrac{v_0^2 \sin ^2 \alpha}{g}\)\\
+ \\
+Kantama: \(R=\dfrac{v_0^2 \sin 2\alpha}{g}\)\\
+ \\
+\textbf{Esim.} Määritä vinoon heittoliikkeeseen saatetun kappaleen paikkavektori sekä vauhti vaakasuoran etäisyyden funktiona.
+
+\newpage
+\section{Työ ja teho}
+Energialla kuvataan kappaleen kykyä tehdä työtä. Jos kappale liikkuu kentässä pisteestä \(a\) pisteeseen \(b\), on tehty työ $$W=\int_a^b \mathbf{F}\cdot \text{d}\mathbf{s}=\int_a^b \left (F_x\dfrac{\text{d}x}{\text{d}t}+F_y\dfrac{\text{d}y}{\text{d}t}+F_z\dfrac{\text{d}z}{\text{d}t}\right )\text{ d}t.$$ \textbf{Esim.} Johda liike-energian lauseke.\\
+ \\
+\textbf{Esim.} Kuinka suuri työ tehdään, kun 10,0 m-säteisen puolipallon muotoinen astia täytetään vedellä?\\
+ \\
+Teholla kuvataan työntekonopeutta. Keskimääräinen teho on $$P=\frac{\Delta W}{\Delta t}$$ ja hetkellinen teho $$P=\frac{\text{d}W}{\text{d}t}=\frac{\text{d}E}{\text{d}t}.$$ \textbf{Esim.} Osoita, että \(P=Fv\).
+
+\newpage
+\section{Käyräintegraali ja kentän konservatiivisuus}
+Kentän \(\mathbf{F}\) käyräintegraali yli käyrän \(C\) on $$\oint_C \mathbf{F}\cdot \text{d}\mathbf{r}=\int_a^b \mathbf{F}(\mathbf{r}(t))\cdot \mathbf{r}'(t)\text{ d}t.$$ \textbf{Esim.} Laske vektorikentän \(\mathbf{F}(x, y, z)=x\mathbf{i}+y\mathbf{j}+z\mathbf{k}\) käyräintegraali yli käyrän \(\mathbf{r}(t)=(x(t), y(t), z(t))=(\sin t, \cos t, t)\), \(0\leq t\leq 2\pi\).\\
+ \\
+Kenttä \(\mathbf{F}\) on konservatiivinen, jos $$\oint_C \mathbf{F}(r)\cdot \text{d}\mathbf{r}=0$$ \emph{kaikille} suljetuille käyrille \(C\). Jos \(\mathbf{F}\) on voimakenttä, niin tällöin tehty työ on nolla. Siis työ riippuu vain polun alku- ja loppupisteistä, ei itse polusta.\\
+ \\
+Jos \(\mathbf{F}\) on konservatiivinen, on olemassa potentiaalifunktio \(U\) siten, että $$\mathbf{F}(x, y, z)=-\frac{\partial U}{\partial x}\mathbf{i}-\frac{\partial U}{\partial y}\mathbf{j}-\frac{\partial U}{\partial z}\mathbf{k}$$ eli $$\mathbf{F}=-\nabla U.$$ Konservatiivisuus voidaan osoittaa myös pyörteettömyysehdon avulla. Jos $$\text{curl }\mathbf{F}=\nabla \times \mathbf{F}=\left (\frac{\partial F_z}{\partial y}-\frac{\partial F_y}{\partial z} \right ) \mathbf{i}+\left (\frac{\partial F_x}{\partial z}-\frac{\partial F_z}{\partial x} \right ) \mathbf{j}+\left (\frac{\partial F_y}{\partial x}-\frac{\partial F_x}{\partial y} \right ) \mathbf{k}=\mathbf{0},$$ on kenttä konservatiivinen.\\
+ \\
+\textbf{Esim.} Onko kenttä \(\mathbf{F}(x, y)=(2x^3y^4+x)\mathbf{i}+(2x^4y^3+y)\mathbf{j}\) konservatiivinen? Jos on, määritä sen potentiaalifunktio.
+
+\newpage
+\section{Liikemäärä ja Newtonin II laki}
+Kappaleen liikemäärä on $$\mathbf{p}=m\mathbf{v}.$$ Suljetussa systeemissä liikemäärä säilyy.\\
+ \\
+Impulssi on $$\mathbf{I}=\mathbf{F}\Delta t.$$ Newtonin II lain mukaan on $$\sum \mathbf{F}=\frac{\text{d}\mathbf{p}}{\text{d}t}$$ eli voima on liikemäärän muutos. Tämä saadaan muotoon \(\sum \mathbf{F}=\dfrac{\text{d}(m\mathbf{v})}{\text{d}t}\) eli \(\mathbf{F}=m\dfrac{\text{d}\mathbf{v}}{\text{d}t}+v\dfrac{\text{d}m}{\text{d}t}\). Jos \(m\) on vakio, niin yhtälö saa muodon \(\mathbf{F}=m\dfrac{\text{d}\mathbf{v}}{\text{d}t}=m\mathbf{a}\).
+ \\
+  \\
+   \\
+\textbf{Esim.} Osoita, että impulssi on liikemäärän muutos.\\
+ \\
+\textbf{Esim.} Kolme kappaletta, joiden massat ovat \(1,0\text{ kg}\), \(2,0\text{ kg}\) ja \(3,0\text{ kg}\), liikkuvat koordinaattiakseleita pitkin origoa kohti nopeudella \(7,0\text{ m/s}\). Ne törmäävät kimmottomasti. Mihin suuntaan ja millä nopeudella toisiinsa takertuneet kappaleet liikkuvat törmäyksen jälkeen?\\
+ \\
+\textbf{Esim.} Tarkastellaan korkeudelta \(h\) pudotettua kappaletta, johon vaikuttaa painovoima ja ilmanvastus. Esitä kappaleen nopeus ajan funktiona. Mikä on kappaleen rajanopeus?
+
+\newpage
+\section{Harmoninen liike ja värähtely}
+Harmoninen voima on voima, joka suuntautuu kohti tasapainoasemaa ja joka on suoraan verrannollinen tasapainoasemasta mitattuun etäisyyteen. Harmoniselle voimalle pätee Hooken laki $$\mathbf{F}=-k\mathbf{x},$$ jossa \(k\) on (jousi)vakio ja \(\mathbf{x}\) venymä. Huomaa, että voima ja venymä ovat vastakkaissuuntaisia.\\
+ \\
+\textbf{Esim.} Kuinka suuri on harmonisen voiman tekemä työ?\\
+ \\
+\textbf{Esim.} Jousen (jousivakio \(k\)) päässä on punnus (massa \(m\)). Systeemi saatetaan värähtelemään. Oletetaan, että punnukseen vaikuttaa vain jousivoima. Johda malli punnuksen paikalle, nopeudelle ja kiihtyvyydelle ajan funktiona. Kuinka suuri on värähtelyn jaksonaika?\\
+ \\
+\textbf{Esim.} Tarkastellaan matemaattista heiluria, jonka langan pituus on \(l\) ja heilahduskulma \(\alpha\). Määritä heilurin jaksonaika.
+
+\newpage
+\section*{Tehtäviä}
+\textbf{1.} Kappaleen alkunopeus on \(v_0\) ja kiihtyvyys \(a\). Määritä kappaleen kulkema matka ajan \(t\) kuluttua integroimalla.\\
+ \\
+\textbf{2.} Määritä voima, kun potentiaalienergia on \(Axy^2+B\sin Cz\).
+\end{document}
